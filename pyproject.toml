@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "caslu-syscare"
+version = "0.1.0"
+description = "Desktop IT diagnostic and support toolkit for Windows"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["PySide6>=6.6", "psutil>=5.9"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pyinstaller>=6"]
+
+[project.gui-scripts]
+syscare = "syscare.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
